@@ -21,9 +21,8 @@ class Register extends React.Component {
   onPasswordChange = (event) => {
     this.setState({password: event.target.value})
   }
-
   onSubmitSignIn = () => {
-    fetch('https://shielded-stream-17624.herokuapp.com/register', {
+    fetch('https://hidden-beyond-84792.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -93,5 +92,5 @@ class Register extends React.Component {
     );
   }
 }
-//hihello
+
 export default Register;

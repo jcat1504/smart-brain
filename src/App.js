@@ -9,6 +9,8 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
+//to run: heroku pg:psql
+
 const particlesOptions = {
   particles: {
     number: {
@@ -75,17 +77,17 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://shielded-stream-17624.herokuapp.com/imageurl', {
+      fetch('https://hidden-beyond-84792.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           input: this.state.input
         })
-      })
+      }) 
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://shielded-stream-17624.herokuapp.com/image', {
+          fetch('https://hidden-beyond-84792.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
